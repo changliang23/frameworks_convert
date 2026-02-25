@@ -1,0 +1,10 @@
+<h2>登录</h2>
+<form method="post">
+  用户名: <input id="username" name="username"><br>
+  密码: <input id="password" type="password" name="password"><br>
+  <button id="loginBtn">登录</button>
+</form>
+<a href="/register">注册</a>
+{% for msg in get_flashed_messages() %}
+<p style="color:red">{{msg}}</p>
+{% endfor %}

@@ -1,0 +1,8 @@
+<h2>文件上传</h2>
+<form method="post" enctype="multipart/form-data">
+<input type="file" id="fileInput" name="file">
+<button id="uploadBtn">上传</button>
+</form>
+{% for msg in get_flashed_messages() %}
+<p>{{msg}}</p>
+{% endfor %}

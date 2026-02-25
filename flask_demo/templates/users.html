@@ -1,0 +1,14 @@
+<h2>用户列表</h2>
+<table border="1" id="userTable">
+<tr><th>用户名</th><th>操作</th></tr>
+{% for u in users %}
+<tr>
+<td>{{u.username}}</td>
+<td><a href="/delete/{{u.username}}">删除</a></td>
+</tr>
+{% endfor %}
+</table>
+<a href="/dashboard">返回</a>
+{% for msg in get_flashed_messages() %}
+<p style="color:green">{{msg}}</p>
+{% endfor %}
