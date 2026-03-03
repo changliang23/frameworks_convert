@@ -7,22 +7,27 @@ import org.testng.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class GeneratedTest {
     private WebDriver driver;
 
     @BeforeClass
     public void setUp() {
-        // 方式1：直接设置系统属性
-        System.setProperty("webdriver.chrome.driver", "/Users/liangchang/code/frameworks_convert/chromedriver/chromedriver");
-        driver = new ChromeDriver();
-
-        // 方式2：使用WebDriverManager（推荐，需要添加依赖）
-        // WebDriverManager.chromedriver().setup();
-        // driver = new ChromeDriver();
-
-        // 最大化窗口
-        driver.manage().window().maximize();
+//         // 方式1：直接设置系统属性
+//         System.setProperty("webdriver.chrome.driver", "/Users/liangchang/code/frameworks_convert/chromedriver/chromedriver");
+//         driver = new ChromeDriver();
+//
+//         // 方式2：使用WebDriverManager（推荐，需要添加依赖）
+//         // WebDriverManager.chromedriver().setup();
+//         // driver = new ChromeDriver();
+//
+//         // 最大化窗口
+//         driver.manage().window().maximize();
+        ChromeOptions options = new ChromeOptions();
+        options.setBinary("/usr/bin/chromium-browser");
+        options.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage");
+        WebDriver driver = new ChromeDriver(options);
     }
     @Test
     public void test_login_success() {

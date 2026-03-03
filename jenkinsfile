@@ -48,6 +48,14 @@ pipeline {
     post {
         always {
             sh 'pkill -f app.py || true'
+            archiveArtifacts artifacts: '**/target/surefire-reports/*.xml', allowEmptyArchive: true
+            junit '**/target/surefire-reports/*.xml'
+        }
+        failure {
+            echo "❌ Tests failed"
+        }
+        success {
+            echo "✅ All tests passed"
         }
     }
 }
