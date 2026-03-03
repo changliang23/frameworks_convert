@@ -1,13 +1,20 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.binary_location = "/usr/bin/chromium-browser"
+options.add_argument("--headless=new")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+driver = webdriver.Chrome(options=options)
 
 # ====== 简化 find 以符合转换规范 ======
 class SimpleDriver(webdriver.Chrome):
-    def __init__(self):
-        service = Service("/Users/liangchang/code/frameworks_convert/chromedriver/chromedriver")
-        super().__init__(service=service)
+    # def __init__(self):
+    #     service = Service("/Users/liangchang/code/frameworks_convert/chromedriver/chromedriver")
+    #     super().__init__(service=service)
 
     def find(self, selector):
         return self.find_element(By.CSS_SELECTOR, selector)

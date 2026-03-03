@@ -1,8 +1,13 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'maven'
+    }
+
     environment {
         FLASK_APP = "flask_demo/app.py"
+        PYTHON = 'python3'
     }
 
     stages {
@@ -26,7 +31,6 @@ pipeline {
         stage('Run Python Tests') {
             steps {
                 sh '''
-                cd python_tests
                 pytest -v
                 '''
             }
