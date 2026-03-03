@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+
+    environment {
+        FLASK_APP = "flask_demo/app.py"
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git url: 'https://gitlab.com/changliang23/frameworks_convert.git', branch: 'main'
+            }
+        }
+
+        stage('Start Flask') {
+            steps {
+                sh '''
+                cd flask_demo
+                nohup python app.py > flask.log 2>&1 &
+                sleep 5
+                '''
+            }
+        }
+
+        stage('Run Python Tests') {
+            steps {
+                sh '''
+                cd python_tests
+                pytest -v
+                '''
+            }
+        }
+
+        stage('Run Java Tests') {
+            steps {
+                sh '''
+                mvn clean test
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            sh 'pkill -f app.py || true'
+        }
+    }
+}
