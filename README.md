@@ -1,11 +1,49 @@
 # frameworks_convert
-pytest/testng/junit/cucumber frameworks demo and convert scripts
+This is a demo project for those familiar with learning Python and Java frameworks (currently including Python's PyTest, Behave, and Java's TestNG, JUnit, RestAssured, Cucumber). It also includes a mock server (currently featuring Flask and TypeScript) and a project for converting scripts between frameworks (currently including conversion from Pytest to TestNG).
 
+The project directory structure is as follows:  
+frameworks_convert/  
+│  
+├── framework_convert/  
+│   ├── pytest_to_testng  
+│  
+├── mock_server/  
+│   ├── flask_demo  
+│   ├── ts_demo  
+│  
+├── python_tests/  
+│   ├── behave_demo  
+│   ├── pytest_demo  
+│  
+├── src/test/java/com/convert/    
+│   ├── cucumber  
+│   ├── junit  
+│   ├── restassured    
+│   └── testng  
+│  
+├── src/resources/  
+│   ├── features    
+│   └── testdata     
+│  
+├── Jenkinsfile  
+│  
+└── README.md
 
-ts flask demo dependence:
+TypeScript demo dependency installation and startup steps:
 npm init -y
 npm install express
 npm install -D typescript ts-node-dev @types/express
+Start: npx ts-node-dev src/app.ts
 
-run ts demo:
-npx ts-node-dev src/app.ts
+Flask demo dependency installation and startup steps:
+pip install flask
+Start: python app.py
+
+Running Cucumber/JUnit/RestAssured/TestNG scripts:
+mvn clean test
+
+Running Pytest scripts:
+pytest -v
+
+Running Behave scripts:
+behave

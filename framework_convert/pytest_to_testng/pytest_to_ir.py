@@ -35,7 +35,7 @@ class PyTestParser(ast.NodeVisitor):
 
             self.tests.append(test)
 
-with open("pytest/test_selenium_demo.py") as f:
+with open("../../python_test/pytest_demo/test_selenium_demo.py") as f:
     tree = ast.parse(f.read())
 
 parser = PyTestParser()
