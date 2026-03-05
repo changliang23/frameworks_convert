@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AllTestCases">
+    <test name="TestNG + Cucumber">
+        <classes>
+            <!-- 添加测试类 -->
+            <!-- <class name="com.convert.testng.GeneratedTest"/> -->
+            <!-- <class name="com.convert.cucumber.runner.CucumberTest"/> -->
+            <class name="com.convert.playwright.BaseTest"/>
+            <!-- <class name="com.convert.playwright.DeleteUserTest"/> -->
+            <!-- <class name="com.convert.playwright.IframeTest"/> -->
+            <!-- <class name="com.convert.playwright.LoginTest"/> -->
+            <!-- <class name="com.convert.playwright.RegisterTest"/> -->
+        </classes>
+    </test>
+</suite>
