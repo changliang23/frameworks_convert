@@ -13,6 +13,7 @@ frameworks_convert/
 │  
 ├── python_tests/  
 │   ├── behave_demo  
+│   ├── playwright_demo  
 │   ├── pytest_demo  
 │  
 ├── src/test/java/com/convert/    
@@ -46,4 +47,9 @@ pytest脚本运行:
 pytest -v  
 
 behave脚本运行：  
-behave
+behave  
+
+playwright依赖安装：  
+pip install playwright pytest  
+playwright install  
+playwright install chromium  
