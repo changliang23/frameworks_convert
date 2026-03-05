@@ -23,7 +23,7 @@ def login():
             if user["username"] == u and user["password"] == p:
                 return redirect("/dashboard")
         flash("登录失败")
-    return render_template("templates/login.html")
+    return render_template("login.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -35,17 +35,17 @@ def register():
         })
         flash("注册成功")
         return redirect("/login")
-    return render_template("templates/register.html")
+    return render_template("register.html")
 
 
 @app.route("/dashboard")
 def dashboard():
-    return render_template("templates/dashboard.html")
+    return render_template("dashboard.html")
 
 
 @app.route("/users")
 def users_page():
-    return render_template("templates/users.html", users=USERS)
+    return render_template("users.html", users=USERS)
 
 
 @app.route("/delete/<name>")
@@ -58,7 +58,7 @@ def delete(name):
 
 @app.route("/iframe")
 def iframe():
-    return render_template("templates/iframe.html")
+    return render_template("iframe.html")
 
 
 @app.route("/upload", methods=["GET", "POST"])
@@ -69,7 +69,7 @@ def upload():
         os.makedirs("uploads", exist_ok=True)
         f.save(path)
         flash("上传成功")
-    return render_template("templates/upload.html")
+    return render_template("upload.html")
 
 
 @app.route("/alert")

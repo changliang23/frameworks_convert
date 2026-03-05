@@ -1,5 +1,5 @@
 # frameworks_convert
-这是一个供熟悉学习Python,Java各框架(目前包含Python的PyTest,Behave，Java的testng,junit,restassured,cucumber)运行的demo，另外包含mock server(目前包含flask,typescript),及各框架脚本转换的项目(目前包含pytest转testng)
+这是一个供熟悉学习Python,Java各框架(目前包含Python的PyTest[selenium, playwright],Behave，Java的testng,junit,restassured,cucumber)运行的demo，另外包含mock server(目前包含flask,typescript),及各框架脚本转换的项目(目前包含pytest转testng)
 
 项目目录结构如下：
 frameworks_convert/  

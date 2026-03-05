@@ -1,5 +1,5 @@
 # frameworks_convert
-This is a demo project for those familiar with learning Python and Java frameworks (currently including Python's PyTest, Behave, and Java's TestNG, JUnit, RestAssured, Cucumber). It also includes a mock server (currently featuring Flask and TypeScript) and a project for converting scripts between frameworks (currently including conversion from Pytest to TestNG).
+This is a demo project for those familiar with learning Python and Java frameworks (currently including Python's PyTest[selenium, playwright],, Behave, and Java's TestNG, JUnit, RestAssured, Cucumber). It also includes a mock server (currently featuring Flask and TypeScript) and a project for converting scripts between frameworks (currently including conversion from Pytest to TestNG).
 
 The project directory structure is as follows:  
 frameworks_convert/  
@@ -46,4 +46,9 @@ Running Pytest scripts:
 pytest -v
 
 Running Behave scripts:
-behave
+behave  
+
+Playwright dependency installation:  
+pip install playwright pytest  
+playwright install  
+playwright install chromium  

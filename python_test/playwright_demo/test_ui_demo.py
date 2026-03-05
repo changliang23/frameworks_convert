@@ -55,8 +55,12 @@ def test_iframe_page(page):
 
     page.goto(f"{BASE_URL}/iframe")
 
-    frame = page.frame_locator("#usersFrame")
+    # 等待 iframe 出现
+    page.wait_for_selector("#myframe")
 
-    frame.locator("body").wait_for()
+    # 在 iframe 内查找
+    frame = page.frame_locator("#myframe")
 
-    assert frame.locator("body").count() > 0
+    frame.get_by_text("用户列表").wait_for()
+
+    assert frame.get_by_text("用户列表").is_visible()
