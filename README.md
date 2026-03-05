@@ -18,6 +18,7 @@ frameworks_convert/
 ├── src/test/java/com/convert/    
 │   ├── cucumber  
 │   ├── junit  
+│   ├── playwright  
 │   ├── restassured    
 │   └── testng  
 │  
@@ -48,7 +49,10 @@ pytest -v
 Running Behave scripts:
 behave  
 
-Playwright dependency installation:  
+Python Playwright dependency installation:  
 pip install playwright pytest  
 playwright install  
 playwright install chromium  
+
+Java Playwright dependency installation:  
+npx playwright install    
