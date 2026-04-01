@@ -54,3 +54,7 @@ playwright依赖安装：
 pip install playwright pytest  
 playwright install  
 playwright install chromium  
+
+pytest_bdd依赖安装：  
+pip install pytest pytest-bdd requests selenium  
+

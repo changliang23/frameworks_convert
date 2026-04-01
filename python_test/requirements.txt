@@ -1,0 +1,9 @@
+pytest
+selenium
+requests
+flask
+openai
+flake8
+radon
+bandit
+pylint

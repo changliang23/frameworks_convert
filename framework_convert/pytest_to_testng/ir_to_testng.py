@@ -30,4 +30,4 @@ java_code.append("}")
 with open("testng/GeneratedTest.java", "w", encoding="utf-8") as f:
     f.write("\n".join(java_code))
 
-print("✅ 已生成 GeneratedTest.java")
+print("已生成 GeneratedTest.java")

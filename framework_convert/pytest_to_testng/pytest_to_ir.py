@@ -44,4 +44,4 @@ parser.visit(tree)
 with open("ir.json", "w", encoding="utf-8") as f:
     json.dump(parser.tests, f, ensure_ascii=False, indent=2)
 
-print("✅ 已生成 ir.json")
+print("已生成 ir.json")

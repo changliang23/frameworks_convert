@@ -56,3 +56,6 @@ playwright install chromium
 
 Java Playwright dependency installation:  
 npx playwright install    
+
+Pytest_bdd dependency installation:  
+pip install pytest pytest-bdd requests selenium  

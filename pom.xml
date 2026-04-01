@@ -24,14 +24,14 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Selenium (如果需要) -->
+        <!-- Selenium -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.18.1</version>
         </dependency>
 
-        <!-- WebDriverManager (如果需要) -->
+        <!-- WebDriverManager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -92,14 +92,14 @@
 
     <build>
         <plugins>
-            <!-- Surefire插件用于运行TestNG测试 -->
+            <!-- Surefire运行TestNG测试 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <!-- 如果有testng.xml，可以在这里指定 -->
+                        <!-- testng.xml指定 -->
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <includes>
@@ -109,6 +109,57 @@
                     </includes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+
+                <configuration>
+                    <includes>
+                        <include>${test.pattern}/**/*.java</include>
+                    </includes>
+                </configuration>
+
+            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+
+        <profile>
+            <id>junit</id>
+            <properties>
+                <test.pattern>com/convert/junit</test.pattern>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>testng</id>
+            <properties>
+                <test.pattern>com/convert/testng</test.pattern>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>cucumber</id>
+            <properties>
+                <test.pattern>com/convert/cucumber</test.pattern>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>restassured</id>
+            <properties>
+                <test.pattern>com/convert/restassured</test.pattern>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>playwright</id>
+            <properties>
+                <test.pattern>com/convert/playwright</test.pattern>
+            </properties>
+        </profile>
+
+    </profiles>
 </project>

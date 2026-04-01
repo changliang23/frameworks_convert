@@ -18,7 +18,7 @@ public class GeneratedTest {
 //         System.setProperty("webdriver.chrome.driver", "/Users/liangchang/code/frameworks_convert/chromedriver/chromedriver");
 //         driver = new ChromeDriver();
 //
-//         // 方式2：使用WebDriverManager（推荐，需要添加依赖）
+//         // 方式2：使用WebDriverManager
 //         // WebDriverManager.chromedriver().setup();
 //         // driver = new ChromeDriver();
 //
